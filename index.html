@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Valcor Studio | Diseño Web de Alto Impacto & Crecimiento Digital</title>
+    <meta name="description" content="Estudio de diseño web premium y desarrollo enfocado en resultados. Creamos soluciones digitales que transforman tu presencia online en una máquina de ventas."/>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS with custom configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0040a1",
+                        "primary-container": "#0056d2",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#ccd8ff",
+                        "tertiary": "#004395",
+                        "tertiary-container": "#005ac2",
+                        "background": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#424654",
+                        "outline": "#737785",
+                        "outline-variant": "#c3c6d6",
+                        "valcor-accent": "#0056d2",
+                        "valcor-dark": "#0b1c30",
+                        "valcor-subtle": "#eff6ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "sm": "0.25rem",
+                        "md": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "section-padding-mobile": "64px",
+                        "section-padding-desktop": "120px",
+                        "container-max": "1280px",
+                        "gutter": "32px"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        'body-md': ['Inter', 'sans-serif'],
+                        'headline-md': ['Inter', 'sans-serif'],
+                        'display-lg': ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0px 4px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0px 12px 30px rgba(0, 86, 210, 0.12)',
+                        'glow': '0 0 25px rgba(0, 86, 210, 0.25)',
+                        'card': '0 10px 30px -5px rgba(11, 28, 48, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0056d2;
+            transition: width 0.3s ease-out;
+        }
+        .nav-link-hover:hover::after,
+        .nav-link-hover.active::after {
+            width: 100%;
+        }
+        .nav-link-hover.active {
+            color: #0056d2;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background-color: #0056d2;
+            color: #ffffff;
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            background-color: #004395;
+            transform: translateY(-2px);
+            box-shadow: 0px 12px 30px rgba(0, 86, 210, 0.18);
+        }
+        .btn-secondary {
+            border: 1px solid #c3c6d6;
+            color: #0040a1;
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-secondary:hover {
+            border-color: #0056d2;
+            background-color: #eff6ff;
+            transform: translateY(-2px);
+        }
+        .card-hover {
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 16px 36px rgba(0, 86, 210, 0.08);
+            border-color: #ccd8ff;
+        }
+        .accordion-content {
+            transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .modal-backdrop {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-backdrop.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .badge-glow {
+            box-shadow: 0 0 15px rgba(0, 86, 210, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden selection:bg-primary-container selection:text-white">
+
+    <!-- Header Fijo con Blur -->
+    <header id="main-header" class="fixed top-0 w-full z-40 bg-surface-bright/90 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300">
+        <div class="max-w-container-max mx-auto px-6 md:px-gutter flex justify-between items-center h-20">
+            <!-- Logo -->
+            <a class="flex items-center gap-2.5 text-2xl font-bold text-primary tracking-tight transition-transform duration-300 hover:scale-[1.02]" href="#hero">
+                <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-md">
+                    <span class="material-symbols-outlined text-2xl" data-icon="polyline">polyline</span>
+                </div>
+                <span class="text-on-background font-extrabold tracking-tight">Valcor<span class="text-primary-container">Studio</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-7">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover active" href="#hero">Inicio</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#servicios">Servicios</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#proceso">Proceso</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#portafolio">Portafolio</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#precios">Precios</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#faq">FAQ</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 text-[15px] font-medium nav-link-hover" href="#contacto">Contacto</a>
+            </nav>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button onclick="openQuoteModal()" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-DEFAULT font-semibold btn-primary text-sm tracking-wide shadow-sm cursor-pointer">
+                    Solicita tu Cotización Gratis
+                </button>
+                <button id="mobile-menu-btn" aria-label="Abrir Menú" class="lg:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-surface-container-lowest border-b border-outline-variant/40 px-6 py-6 space-y-4 shadow-xl">
+            <nav class="flex flex-col space-y-3 font-medium">
+                <a class="text-primary font-bold py-2 border-b border-outline-variant/20" href="#hero" onclick="toggleMobileMenu()">Inicio</a>
+                <a class="text-on-surface-variant hover:text-primary py-2 border-b border-outline-variant/20" href="#servicios" onclick="toggleMobileMenu()">Servicios</a>
+                <a class="text-on-surface-variant hover:text-primary py-2 border-b border-outline-variant/20" href="#proceso" onclick="toggleMobileMenu()">Proceso</a>
+                <a class="text-on-surface-variant hover:text-primary py-2 border-b border-outline-variant/20" href="#portafolio" onclick="toggleMobileMenu()">Portafolio</a>
+                <a class="text-on-surface-variant hover:text-primary py-2 border-b border-outline-variant/20" href="#precios" onclick="toggleMobileMenu()">Precios</a>
+                <a class="text-on-surface-variant hover:text-primary py-2 border-b border-outline-variant/20" href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+                <a class="text-on-surface-variant hover:text-primary py-2" href="#contacto" onclick="toggleMobileMenu()">Contacto</a>
+            </nav>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openQuoteModal();" class="w-full py-3 rounded-DEFAULT font-bold btn-primary text-center text-sm shadow-md block">
+                    Solicita tu Cotización Gratis
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 px-6 md:px-gutter relative overflow-hidden bg-gradient-to-b from-surface-bright via-background to-surface-container-low/40" id="hero">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="space-y-8 z-10 lg:col-span-7">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#EFF6FF] border border-primary/15 text-primary text-xs md:text-sm font-bold tracking-wider uppercase badge-glow">
+                        <span class="material-symbols-outlined text-base" data-icon="rocket_launch" data-weight="fill">rocket_launch</span>
+                        Estudio de Diseño & Desarrollo Premium
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-on-background leading-[1.12] tracking-tight">
+                        Diseño Web de Alto Impacto para <span class="text-primary-container">Escalar tu Negocio</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Creamos soluciones digitales de clase mundial que transforman visitantes en clientes leales. Minimalismo estratégico, velocidad récord y arquitectura orientada a conversiones.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <button onclick="openQuoteModal()" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-DEFAULT font-bold btn-primary text-base md:text-lg shadow-lg cursor-pointer">
+                            <span>Iniciar Proyecto</span>
+                            <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                        </button>
+                        <a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-DEFAULT font-semibold btn-secondary text-base md:text-lg bg-surface-container-lowest shadow-sm" href="#portafolio">
+                            <span>Ver Portafolio</span>
+                            <span class="material-symbols-outlined text-xl">visibility</span>
+                        </a>
+                    </div>
+                    
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-outline-variant/40">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-symbols-outlined text-xl" data-weight="fill">verified</span>
+                            </div>
+                            <div>
+                                <p class="text-base font-bold text-on-background">+150</p>
+                                <p class="text-xs text-on-surface-variant">Proyectos entregados</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-symbols-outlined text-xl" data-weight="fill">military_tech</span>
+                            </div>
+                            <div>
+                                <p class="text-base font-bold text-on-background">+10 Años</p>
+                                <p class="text-xs text-on-surface-variant">De experiencia digital</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <span class="material-symbols-outlined text-xl" data-weight="fill">trending_up</span>
+                            </div>
+                            <div>
+                                <p class="text-base font-bold text-on-background">99.4%</p>
+                                <p class="text-xs text-on-surface-variant">Satisfacción clientes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Mockup -->
+                <div class="relative z-10 lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-surface-container-highest border border-outline-variant/30 group card-hover">
+                        <img class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" alt="Valcor Studio Laptop Mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmRf93t8JLrHzsbV2bdyLmQ7phAJXIHprGRMaFR7TvLLqeLG1tKbPCpMsJRhSS0pZejZjGDRKr9VsQ7j4HaeXBLYbdmaa-pC8rP2AKqIyOcCKBOFtasQIGKkMl8CU-BS4bGKtd4OPOqpHtlyAdcHshR97bn_1vpjS0s1MCU3-L7s95SEspAFlAgRT1m5q-ZRkFvqz6rjFZohIzG2fxD-4VhwPd0HRatm-bY_sto9jltwuHkCQ4KVUg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-valcor-dark/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                                <span class="text-xs font-bold text-on-background uppercase tracking-wider">Diseño Web Vivo & Optimizado</span>
+                            </div>
+                            <span class="text-xs font-semibold text-primary">Score 100/100</span>
+                        </div>
+                    </div>
+                    <!-- Ambient Lights -->
+                    <div class="absolute -bottom-10 -left-10 w-56 h-56 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-tertiary-container/15 rounded-full blur-3xl -z-10"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Strip -->
+        <section class="py-8 bg-surface-container-lowest border-y border-outline-variant/30">
+            <div class="max-w-container-max mx-auto px-6 md:px-gutter">
+                <p class="text-center text-xs uppercase tracking-widest text-outline font-bold mb-6">Tecnologías & Estándares que Dominamos</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 text-on-surface-variant font-medium text-sm">
+                    <span class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-primary">code</span> Next.js & React</span>
+                    <span class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-primary">speed</span> Google Core Web Vitals</span>
+                    <span class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-primary">palette</span> UI/UX Figma Systems</span>
+                    <span class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-primary">search</span> SEO Técnico & Schema</span>
+                    <span class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-primary">security</span> Arquitectura Segura</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-background" id="servicios">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Nuestros Servicios</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">Soluciones Digitales Diseñadas para Convertir</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant">Combinamos diseño de vanguardia con ingeniería web sólida para maximizar el ROI de tu presencia digital.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-[#EFF6FF] text-primary-container flex items-center justify-center mb-6 shadow-sm">
+                                <span class="material-symbols-outlined text-3xl">desktop_windows</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-on-background mb-3">Diseño Web UI/UX</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Diseños únicos y minimalistas basados en la psicología del usuario. Creamos experiencias intuitivas que cautivan y retienen.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-on-surface-variant border-t border-outline-variant/20 pt-4">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Prototipos interactivos</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Diseño 100% responsivo</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Design System personalizado</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-[#EFF6FF] text-primary-container flex items-center justify-center mb-6 shadow-sm">
+                                <span class="material-symbols-outlined text-3xl">terminal</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-on-background mb-3">Desarrollo Web Pro</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Código limpio, arquitectura moderna y carga ultrarrápida para garantizar que nunca pierdas una venta por lentitud técnica.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-on-surface-variant border-t border-outline-variant/20 pt-4">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Optimización 95+ PageSpeed</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Integración de CMS a medida</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Seguridad y SSL avanzado</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-[#EFF6FF] text-primary-container flex items-center justify-center mb-6 shadow-sm">
+                                <span class="material-symbols-outlined text-3xl">query_stats</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-on-background mb-3">Optimización CRO & SEO</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Estructuras diseñadas para escalar en Google y embudos optimizados para guiar al usuario hacia la compra o contacto directo.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-on-surface-variant border-t border-outline-variant/20 pt-4">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> SEO On-Page estratégico</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Embudos de conversión claros</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Event tracking y analítica</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-[#EFF6FF] text-primary-container flex items-center justify-center mb-6 shadow-sm">
+                                <span class="material-symbols-outlined text-3xl">diamond</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-on-background mb-3">Estrategia & Branding</h3>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Elevamos la percepción de valor de tu marca con una narrativa visual coherente, copywriting persuasivo e identidad premium.
+                            </p>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-on-surface-variant border-t border-outline-variant/20 pt-4">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Copywriting persuasivo</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Identidad de marca digital</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">north_east</span> Posicionamiento de alto valor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-surface-container-low/50 border-y border-outline-variant/30" id="proceso">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Metodología Comprobada</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">Un Proceso Transparente y Sin Fricción</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant">Desde la primera sesión estratégica hasta el lanzamiento final, garantizamos cumplimiento y precisión en cada hito.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-sm relative group card-hover">
+                        <div class="text-4xl font-extrabold text-primary/20 mb-4 group-hover:text-primary transition-colors">01</div>
+                        <h3 class="text-lg font-bold text-on-background mb-2">Descubrimiento</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Analizamos a fondo tu modelo de negocio, público objetivo y competidores para definir una estrategia clara y objetivos de conversión.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-sm relative group card-hover">
+                        <div class="text-4xl font-extrabold text-primary/20 mb-4 group-hover:text-primary transition-colors">02</div>
+                        <h3 class="text-lg font-bold text-on-background mb-2">Diseño UI/UX</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Creamos wireframes y prototipos interactivos en Figma. Iteramos contigo hasta lograr una estética impecable antes de escribir código.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-sm relative group card-hover">
+                        <div class="text-4xl font-extrabold text-primary/20 mb-4 group-hover:text-primary transition-colors">03</div>
+                        <h3 class="text-lg font-bold text-on-background mb-2">Desarrollo Web</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Construimos tu sitio con tecnologías de alto rendimiento, optimizando tiempos de respuesta, animaciones y compatibilidad total.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 shadow-sm relative group card-hover">
+                        <div class="text-4xl font-extrabold text-primary/20 mb-4 group-hover:text-primary transition-colors">04</div>
+                        <h3 class="text-lg font-bold text-on-background mb-2">Lanzamiento & Soporte</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Desplegamos en tu dominio con chequeos de seguridad, configuración de analítica y capacitación para gestionar tu contenido.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portafolio Seleccionado Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-background" id="portafolio">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Casos de Éxito</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">Portafolio Seleccionado</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant">Proyectos donde el diseño estratégico impulsó resultados tangibles y medibles de negocio.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                    <!-- Project 1: Vacar Detailing -->
+                    <div class="group card-hover bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/40 shadow-card flex flex-col justify-between">
+                        <div class="aspect-[16/9] overflow-hidden relative bg-surface-container">
+                            <img alt="Vacar Detailing Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosgc9AXRSZVm5LZmBurgWsVIe4E9gcvMqbxhALxJ0AH9nSBlZdFv0vu4wqrCwcu9lXVHxMDQb5zeKZ4anjz6WNkidhgpgsni1dTx9iYZAipwSZUyMq-VrYgYDidnBzCdvyE5nHe06sx5DYSCyYyCo4q5uo940bBN149e-dUE-qUoX9z01_XRSfULZwvI-RlWuqShpWHxXZr1qCa3XkDN1PQe1QFxp3vJBkbtEc4i46qRWSJ5SrNtCgr0KtgwQP2vQJbUoZr0hwHsVww"/>
+                            <div class="absolute top-4 right-4 bg-primary text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+                                +85% Reservas Online
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <span class="text-xs text-primary font-bold uppercase tracking-wider">Automotriz & Detailing</span>
+                                    <h3 class="text-2xl font-bold text-on-background mt-1">Vacar Detailing</h3>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Plataforma web de alta gama para estudio de estética automotriz, con cotizador interactivo en tiempo real y embudo directo a WhatsApp.
+                            </p>
+                            <button onclick="openProjectModal('vacar')" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all text-sm group-hover:text-primary-container cursor-pointer">
+                                <span>Ver Caso Completo</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Annie Natural Beauty -->
+                    <div class="group card-hover bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/40 shadow-card flex flex-col justify-between">
+                        <div class="aspect-[16/9] overflow-hidden relative bg-surface-container">
+                            <img alt="Annie Natural Beauty Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQDLVjhviirl2zMzfrt0UjZ17w7GwLOoih6pGjwYJvyYHKYHlfKLZJTW7h3oHW3QwBLstdjrczkaHhwPxcEYlXKAYymiFdn03j3rGy3vvIwzWboXu2fjEdpdAcedVZQqSYz_7I6iFr_Mf2Iv_U5OQHn09S9Yo3VoFd_msCv4CN2HgWZSTO-f1QnQd3vzi_xOfDOIInb4RxL-EbKFFrATLmG_XwdFhBBnlcl4DaKmNpgyxx1KsBmhIJvyRE0_kIftQwOVq5csneBUE_g"/>
+                            <div class="absolute top-4 right-4 bg-primary text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+                                2.5x Interacción
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <span class="text-xs text-primary font-bold uppercase tracking-wider">Salud & Bienestar</span>
+                                    <h3 class="text-2xl font-bold text-on-background mt-1">Annie Natural Beauty</h3>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Sitio web santuario minimalista enfocado en la serenidad, catálogo de tratamientos orgánicos y reservas en línea sin fricción.
+                            </p>
+                            <button onclick="openProjectModal('annie')" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all text-sm group-hover:text-primary-container cursor-pointer">
+                                <span>Ver Caso Completo</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planes & Precios Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-surface-container-low/40 border-y border-outline-variant/30" id="precios">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Inversión Transparente</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">Planes Diseñados para Escalar</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant">Sin tarifas ocultas ni sorpresas. Proyectos con alcance definido y entrega garantizada.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    <!-- Plan 1 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-on-background">Landing Page Pro</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-md text-on-surface-variant">Conversión Rápida</span>
+                            </div>
+                            <p class="text-sm text-on-surface-variant mb-6">Ideal para validación de servicios, lanzamientos de producto y campañas de pauta publicitaria.</p>
+                            <div class="mb-6 pb-6 border-b border-outline-variant/20">
+                                <span class="text-3xl md:text-4xl font-extrabold text-on-background">Desde $1,500</span>
+                                <span class="text-xs text-on-surface-variant ml-1 font-medium">MXN / proyecto</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-on-surface-variant mb-8">
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Página de Alto Impacto</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Diseño UI/UX a Medida</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Integración a WhatsApp & Email</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Optimización Móvil & Carga Rápida</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Entrega en 2 - 5 días hábiles</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPlan('Landing Page Pro')" class="w-full py-3.5 rounded-DEFAULT font-bold btn-secondary text-sm text-center">
+                            Elegir Landing Pro
+                        </button>
+                    </div>
+
+                    <!-- Plan 2: Destacado -->
+                    <div class="bg-surface-container-lowest p-8 rounded-2xl border-2 border-primary-container shadow-hover relative card-hover flex flex-col justify-between">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-white text-xs font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-md">
+                            ★ Más Solicitado
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-on-background">Sitio Corporativo</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-primary-container/10 text-primary rounded-md">Escala de Negocio</span>
+                            </div>
+                            <p class="text-sm text-on-surface-variant mb-6">Para empresas que buscan consolidar autoridad, presentar múltiples servicios y capturar prospectos calificados.</p>
+                            <div class="mb-6 pb-6 border-b border-outline-variant/20">
+                                <span class="text-3xl md:text-4xl font-extrabold text-primary-container">Desde $2,000</span>
+                                <span class="text-xs text-on-surface-variant ml-1 font-medium">MXN / proyecto</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-on-surface-variant mb-8">
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Hasta 5 Secciones / Páginas</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Sistema de Cotización o Reservas</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> SEO Técnico & Google Indexing</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Panel Autogestionable</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Entrega en 3 - 6 días hábiles</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPlan('Sitio Corporativo')" class="w-full py-3.5 rounded-DEFAULT font-bold btn-primary text-sm text-center shadow-md">
+                            Elegir Sitio Corporativo
+                        </button>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/40 shadow-card card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-on-background">Solución a Medida</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-surface-container rounded-md text-on-surface-variant">Full Custom</span>
+                            </div>
+                            <p class="text-sm text-on-surface-variant mb-6">Desarrollo web avanzado con requerimientos específicos, catálogos complejos o integraciones de API.</p>
+                            <div class="mb-6 pb-6 border-b border-outline-variant/20">
+                                <span class="text-3xl md:text-4xl font-extrabold text-on-background">A Medida</span>
+                                <span class="text-xs text-on-surface-variant ml-1 font-medium">Cotización personalizada</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-on-surface-variant mb-8">
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Arquitectura a Medida</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> E-Commerce o Pasarelas de Pago</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Integración CRM / APIs externas</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Soporte Premium Dedicado</li>
+                                <li class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Cronograma personalizado</li>
+                            </ul>
+                        </div>
+                        <button onclick="selectPlan('Solución a Medida')" class="w-full py-3.5 rounded-DEFAULT font-bold btn-secondary text-sm text-center">
+                            Cotizar a Medida
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-background" id="faq">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-14 space-y-3">
+                    <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Resolvemos tus Dudas</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">Preguntas Frecuentes</h2>
+                    <p class="text-base text-on-surface-variant">Todo lo que necesitas saber antes de dar el siguiente paso con nosotros.</p>
+                </div>
+
+                <div class="space-y-4" id="faq-accordion">
+                    <!-- FAQ 1 -->
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm">
+                        <button class="w-full px-6 py-5 text-left font-bold text-on-background flex justify-between items-center gap-4 hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                            <span>¿Cuánto tiempo toma desarrollar mi sitio web?</span>
+                            <span class="material-symbols-outlined text-primary transform transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Para una Landing Page Pro el tiempo promedio es de 2 a 5 días hábiles. Para un Sitio Web Corporativo completo, entre 3 y 6 días hábiles. Siempre establecemos un cronograma transparente desde el inicio.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm">
+                        <button class="w-full px-6 py-5 text-left font-bold text-on-background flex justify-between items-center gap-4 hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                            <span>¿Cómo es el esquema de pagos?</span>
+                            <span class="material-symbols-outlined text-primary transform transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Trabajamos con un esquema de 50% de anticipo para iniciar el diseño y desarrollo, y el 50% restante al finalizar todas las revisiones y antes de la entrega final del dominio en vivo. Aceptamos transferencia bancaria, tarjeta y PayPal.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm">
+                        <button class="w-full px-6 py-5 text-left font-bold text-on-background flex justify-between items-center gap-4 hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                            <span>¿El sitio web será autogestionable?</span>
+                            <span class="material-symbols-outlined text-primary transform transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            ¡Sí! Te entregamos una estructura intuitiva y te brindamos una sesión de capacitación en video para que puedas editar textos, imágenes y productos fácilmente sin depender de un programador para cambios básicos.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm">
+                        <button class="w-full px-6 py-5 text-left font-bold text-on-background flex justify-between items-center gap-4 hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                            <span>¿Qué pasa si ya tengo un dominio o hosting contratado?</span>
+                            <span class="material-symbols-outlined text-primary transform transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Podemos trabajar directamente sobre tu infraestructura existente o ayudarte a migrar y configurar todo en servidores de alto rendimiento optimizados para velocidad y seguridad.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm">
+                        <button class="w-full px-6 py-5 text-left font-bold text-on-background flex justify-between items-center gap-4 hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                            <span>¿Ofrecen soporte y mantenimiento post-lanzamiento?</span>
+                            <span class="material-symbols-outlined text-primary transform transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content px-6 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Todos nuestros proyectos incluyen 30 días de garantía y soporte técnico gratuito post-lanzamiento. Además, ofrecemos planes mensuales de mantenimiento preventivo, copias de seguridad y optimización continua.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cotizador & Contacto Section -->
+        <section class="py-20 md:py-28 px-6 md:px-gutter bg-surface-container-low/50 border-t border-outline-variant/30" id="contacto">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left Column: Contact Info & Value Prop -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="space-y-3">
+                            <span class="text-xs font-bold text-primary tracking-widest uppercase bg-primary-container/10 px-3.5 py-1.5 rounded-full">Hablemos de tu Proyecto</span>
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-on-background tracking-tight">¿Listo para Impulsar tu Marca al Siguiente Nivel?</h2>
+                            <p class="text-base text-on-surface-variant leading-relaxed">
+                                Agenda una consulta estratégica gratuita o solicita tu cotización personalizada. Te respondemos en menos de 24 horas.
+                            </p>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-on-surface-variant font-medium">Correo Directo</p>
+                                    <a href="mailto:valcor.studiomx@gmail.com" class="text-base font-bold text-on-background hover:text-primary transition-colors">valcor.studiomx@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
+                                    <span class="material-symbols-outlined">phone_in_talk</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-on-surface-variant font-medium">Atención Inmediata / WhatsApp</p>
+                                    <a href="tel:+528712111065" class="text-base font-bold text-on-background hover:text-primary transition-colors">+52 871 211 1065</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
+                                    <span class="material-symbols-outlined">schedule</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-on-surface-variant font-medium">Horario de Atención</p>
+                                    <p class="text-base font-bold text-on-background">Lunes a Viernes: 9:00 - 18:00 (GMT-6)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+                            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+                                <span class="material-symbols-outlined text-lg">security</span>
+                                <span>Garantía de Satisfacción Valcor</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">
+                                No descansamos hasta que estés 100% satisfecho con el prototipo y la arquitectura antes de publicar tu sitio web.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Form -->
+                    <div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-outline-variant/40 shadow-card">
+                        <h3 class="text-2xl font-bold text-on-background mb-2">Cotizador & Contacto</h3>
+                        <p class="text-sm text-on-surface-variant mb-8">Cuéntanos sobre tu proyecto para enviarte una propuesta a medida.</p>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Tu Nombre *</label>
+                                    <input type="text" id="form-name" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"/>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Correo Electrónico *</label>
+                                    <input type="email" id="form-email" required placeholder="carlos@tuempresa.com" class="w-full px-4 py-3 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"/>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="form-phone" placeholder="+52 871 000 0000" class="w-full px-4 py-3 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"/>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Tipo de Proyecto *</label>
+                                    <select id="form-service" class="w-full px-4 py-3 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none bg-white">
+                                        <option value="Landing Page Pro">Landing Page Pro</option>
+                                        <option value="Sitio Corporativo" selected>Sitio Web Corporativo</option>
+                                        <option value="E-Commerce / Tienda">Tienda Online / E-Commerce</option>
+                                        <option value="Rediseño / Optimización">Rediseño & Optimización CRO</option>
+                                        <option value="Solución a Medida">Desarrollo a Medida</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Presupuesto Estimado</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button type="button" onclick="setBudget(this, '< $1,500 MXN')" class="budget-btn py-2.5 px-3 rounded-DEFAULT border border-outline-variant text-xs font-semibold text-on-surface-variant hover:border-primary transition-all">
+                                        &lt; $1,500 MXN
+                                    </button>
+                                    <button type="button" onclick="setBudget(this, '$1,500 - $2,500 MXN')" class="budget-btn py-2.5 px-3 rounded-DEFAULT border-2 border-primary-container text-xs font-bold text-primary bg-primary/5 transition-all">
+                                        $1,500 - $2,500
+                                    </button>
+                                    <button type="button" onclick="setBudget(this, '> $2,500 MXN')" class="budget-btn py-2.5 px-3 rounded-DEFAULT border border-outline-variant text-xs font-semibold text-on-surface-variant hover:border-primary transition-all">
+                                        &gt; $2,500 MXN
+                                    </button>
+                                </div>
+                                <input type="hidden" id="form-budget" value="$1,500 - $2,500 MXN"/>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-2">Detalles del Proyecto *</label>
+                                <textarea id="form-message" required rows="4" placeholder="Describe brevemente tus objetivos, tu industria y qué resultados esperas alcanzar con la nueva web..." class="w-full px-4 py-3 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-DEFAULT font-bold btn-primary text-base flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+                                <span>Enviar Solicitud de Cotización</span>
+                                <span class="material-symbols-outlined">send</span>
+                            </button>
+
+                            <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center gap-3">
+                                <span class="material-symbols-outlined text-emerald-600">check_circle</span>
+                                <div>
+                                    <p class="font-bold">¡Mensaje recibido con éxito!</p>
+                                    <p class="text-xs">Un asesor de Valcor Studio revisará tus requerimientos y te contactará en breve.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/40 pt-16 pb-12">
+        <div class="max-w-container-max mx-auto px-6 md:px-gutter">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-outline-variant/30">
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a class="flex items-center gap-2.5 text-2xl font-bold text-primary tracking-tight" href="#hero">
+                        <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-xl">polyline</span>
+                        </div>
+                        <span class="text-on-background font-extrabold">Valcor<span class="text-primary-container">Studio</span></span>
+                    </a>
+                    <p class="text-sm text-on-surface-variant leading-relaxed max-w-sm">
+                        Estudio especializado en diseño web y desarrollo enfocado en conversión. Elevamos la presencia digital de negocios ambiciosos con precisión y elegancia.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+                        <span class="material-symbols-outlined text-base text-primary">public</span>
+                        <span>Estudio Digital - Operando Globalmente</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-on-background uppercase tracking-wider">Navegación</h4>
+                    <ul class="space-y-2 text-sm text-on-surface-variant">
+                        <li><a href="#hero" class="hover:text-primary transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-primary transition-colors">Servicios</a></li>
+                        <li><a href="#proceso" class="hover:text-primary transition-colors">Proceso</a></li>
+                        <li><a href="#portafolio" class="hover:text-primary transition-colors">Portafolio</a></li>
+                        <li><a href="#precios" class="hover:text-primary transition-colors">Precios</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-on-background uppercase tracking-wider">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-on-surface-variant">
+                        <li><a href="mailto:valcor.studiomx@gmail.com" class="hover:text-primary transition-colors">valcor.studiomx@gmail.com</a></li>
+                        <li><a href="tel:+528712111065" class="hover:text-primary transition-colors">+52 871 211 1065</a></li>
+                        <li><a href="#contacto" class="hover:text-primary transition-colors">Solicitar Cotización</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Redes & Legal -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-on-background uppercase tracking-wider">Síguenos</h4>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="https://www.instagram.com/valcorstudio/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-lg">photo_camera</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61593722232577" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-lg">thumb_up</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+                <p>© 2024 Valcor Studio. Todos los derechos reservados. Minimalismo y Precisión en el Diseño.</p>
+                <div class="flex gap-6">
+                    <a href="javascript:void(0)" onclick="alert('Política de Privacidad: Valcor Studio protege rigurosamente la privacidad de tus datos.');" class="hover:text-primary transition-colors">Política de Privacidad</a>
+                    <a href="javascript:void(0)" onclick="alert('Términos de Servicio: Todo proyecto se rige bajo contrato de confidencialidad y entrega garantizada.');" class="hover:text-primary transition-colors">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Cotización Rápida -->
+    <div id="quote-modal" class="modal-backdrop hidden fixed inset-0 z-50 flex items-center justify-center bg-valcor-dark/70 backdrop-blur-sm p-4">
+        <div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl border border-outline-variant/40 overflow-hidden transform transition-all duration-300 scale-95 opacity-0 modal-container">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-xl">bolt</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-on-background">Cotización Rápida</h3>
+                    </div>
+                    <button onclick="closeQuoteModal()" class="text-on-surface-variant hover:text-on-background p-1.5 rounded-lg hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+
+                <form onsubmit="handleQuickQuote(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-1.5">Nombre Completo</label>
+                        <input type="text" id="quick-name" required placeholder="Tu nombre" class="w-full px-4 py-2.5 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-1.5">WhatsApp / Teléfono</label>
+                        <input type="tel" id="quick-phone" required placeholder="+52 871 000 0000" class="w-full px-4 py-2.5 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-on-background uppercase tracking-wider mb-1.5">Plan o Servicio de Interés</label>
+                        <select id="quick-service" class="w-full px-4 py-2.5 rounded-DEFAULT border border-outline-variant text-sm focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none bg-white">
+                            <option value="Landing Page Pro">Landing Page Pro</option>
+                            <option value="Sitio Corporativo" selected>Sitio Web Corporativo</option>
+                            <option value="Solución a Medida">Solución Digital a Medida</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-3.5 rounded-DEFAULT font-bold btn-primary text-sm shadow-md mt-4 cursor-pointer">
+                        Enviar por WhatsApp & Email
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Detalle de Proyecto -->
+    <div id="project-modal" class="modal-backdrop hidden fixed inset-0 z-50 flex items-center justify-center bg-valcor-dark/70 backdrop-blur-sm p-4">
+        <div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-2xl border border-outline-variant/40 overflow-hidden transform transition-all duration-300 scale-95 opacity-0 modal-container max-h-[90vh] overflow-y-auto">
+            <div class="relative aspect-video bg-surface-container">
+                <img id="project-modal-img" src="" alt="Project Image" class="w-full h-full object-cover"/>
+                <button onclick="closeProjectModal()" class="absolute top-4 right-4 bg-valcor-dark/60 backdrop-blur-md text-white p-2 rounded-full hover:bg-valcor-dark transition-colors">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
+            </div>
+            <div class="p-6 md:p-8 space-y-4">
+                <div class="flex justify-between items-center">
+                    <span id="project-modal-tag" class="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full"></span>
+                    <span id="project-modal-metric" class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full"></span>
+                </div>
+                <h3 id="project-modal-title" class="text-2xl font-bold text-on-background"></h3>
+                <p id="project-modal-desc" class="text-sm text-on-surface-variant leading-relaxed"></p>
+                
+                <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 space-y-2">
+                    <p class="text-xs font-bold text-on-background uppercase">Entregables y Solución Técnica:</p>
+                    <ul id="project-modal-deliverables" class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-4"></ul>
+                </div>
+
+                <div class="pt-2 flex justify-end">
+                    <button onclick="closeProjectModal(); openQuoteModal();" class="px-6 py-2.5 rounded-DEFAULT font-bold btn-primary text-sm">
+                        Cotizar Proyecto Similar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Data for Project Modals
+        const projectData = {
+            vacar: {
+                title: "Vacar Detailing",
+                tag: "Automotriz & Detailing de Alta Gama",
+                metric: "+85% Reservas Online",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosgc9AXRSZVm5LZmBurgWsVIe4E9gcvMqbxhALxJ0AH9nSBlZdFv0vu4wqrCwcu9lXVHxMDQb5zeKZ4anjz6WNkidhgpgsni1dTx9iYZAipwSZUyMq-VrYgYDidnBzCdvyE5nHe06sx5DYSCyYyCo4q5uo940bBN149e-dUE-qUoX9z01_XRSfULZwvI-RlWuqShpWHxXZr1qCa3XkDN1PQe1QFxp3vJBkbtEc4i46qRWSJ5SrNtCgr0KtgwQP2vQJbUoZr0hwHsVww",
+                desc: "Desarrollo de plataforma digital de alto impacto visual con modo oscuro sofisticado, configurador de servicios de corrección de pintura, protección cerámica y reserva directa.",
+                deliverables: [
+                    "Diseño UI/UX de alto contraste con enfoque luxury",
+                    "Configurador interactivo de paquetes y cotización inmediata",
+                    "Optimización SEO local para captación de clientes de alto poder adquisitivo",
+                    "Integración a WhatsApp Business API y agenda automatizada"
+                ]
+            },
+            annie: {
+                title: "Annie Natural Beauty",
+                tag: "Salud, Spa & Cosmética Natural",
+                metric: "2.5x Interacción y Citas",
+                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAnQDLVjhviirl2zMzfrt0UjZ17w7GwLOoih6pGjwYJvyYHKYHlfKLZJTW7h3oHW3QwBLstdjrczkaHhwPxcEYlXKAYymiFdn03j3rGy3vvIwzWboXu2fjEdpdAcedVZQqSYz_7I6iFr_Mf2Iv_U5OQHn09S9Yo3VoFd_msCv4CN2HgWZSTO-f1QnQd3vzi_xOfDOIInb4RxL-EbKFFrATLmG_XwdFhBBnlcl4DaKmNpgyxx1KsBmhIJvyRE0_kIftQwOVq5csneBUE_g",
+                desc: "Un sitio web santuario minimalista diseñado para transmitir tranquilidad, pureza y exclusividad. Enfoque editorial que destaca tratamientos faciales y corporales orgánicos.",
+                deliverables: [
+                    "Dirección de arte minimalista y tipografía editorial",
+                    "Catálogo dinámico de tratamientos y beneficios",
+                    "Sistema de reserva de citas integrado con recordatorios",
+                    "Puntuación 99/100 en Google Core Web Vitals"
+                ]
+            }
+        };
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            const icon = document.getElementById('menu-icon');
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                icon.textContent = 'close';
+            } else {
+                drawer.classList.add('hidden');
+                icon.textContent = 'menu';
+            }
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            const isOpen = content.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                el.classList.remove('open');
+            });
+            document.querySelectorAll('#faq-accordion .material-symbols-outlined').forEach(el => {
+                el.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                content.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Budget Buttons Selection
+        function setBudget(btn, val) {
+            document.querySelectorAll('.budget-btn').forEach(b => {
+                b.className = 'budget-btn py-2.5 px-3 rounded-DEFAULT border border-outline-variant text-xs font-semibold text-on-surface-variant hover:border-primary transition-all';
+            });
+            btn.className = 'budget-btn py-2.5 px-3 rounded-DEFAULT border-2 border-primary-container text-xs font-bold text-primary bg-primary/5 transition-all';
+            document.getElementById('form-budget').value = val;
+        }
+
+        // Plan Pre-selector
+        function selectPlan(planName) {
+            const selectEl = document.getElementById('form-service');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value.toLowerCase().includes(planName.toLowerCase())) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+            const contactSection = document.getElementById('contacto');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Quote Modal Control
+        function openQuoteModal() {
+            const modal = document.getElementById('quote-modal');
+            const container = modal.querySelector('.modal-container');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeQuoteModal() {
+            const modal = document.getElementById('quote-modal');
+            const container = modal.querySelector('.modal-container');
+            container.classList.add('scale-95', 'opacity-0');
+            container.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 250);
+        }
+
+        // Project Modal Control
+        function openProjectModal(key) {
+            const data = projectData[key];
+            if (!data) return;
+
+            document.getElementById('project-modal-img').src = data.img;
+            document.getElementById('project-modal-title').textContent = data.title;
+            document.getElementById('project-modal-tag').textContent = data.tag;
+            document.getElementById('project-modal-metric').textContent = data.metric;
+            document.getElementById('project-modal-desc').textContent = data.desc;
+
+            const deliverablesList = document.getElementById('project-modal-deliverables');
+            deliverablesList.innerHTML = '';
+            data.deliverables.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                deliverablesList.appendChild(li);
+            });
+
+            const modal = document.getElementById('project-modal');
+            const container = modal.querySelector('.modal-container');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            const container = modal.querySelector('.modal-container');
+            container.classList.add('scale-95', 'opacity-0');
+            container.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 250);
+        }
+
+        // Contact Form Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const budget = document.getElementById('form-budget').value;
+            const message = document.getElementById('form-message').value;
+
+            // Show feedback
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            
+            // Format WhatsApp URL optional redirect
+            const text = encodeURIComponent(`Hola Valcor Studio, mi nombre es ${name}. Me interesa una cotización para ${service}. Presupuesto: ${budget}. Tel: ${phone}. Email: ${email}. Mensaje: ${message}`);
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/528712111065?text=${text}`, '_blank');
+            }, 1200);
+        }
+
+        // Quick Quote Modal Submission
+        function handleQuickQuote(e) {
+            e.preventDefault();
+            const name = document.getElementById('quick-name').value;
+            const phone = document.getElementById('quick-phone').value;
+            const service = document.getElementById('quick-service').value;
+
+            const text = encodeURIComponent(`Hola Valcor Studio, solicito una Cotización Rápida. Mi nombre es ${name}, Tel: ${phone}. Servicio de interés: ${service}.`);
+            closeQuoteModal();
+            window.open(`https://wa.me/528712111065?text=${text}`, '_blank');
+        }
+
+        // Active Navigation Scroll Spy
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 120;
+                const sectionId = current.getAttribute('id');
+                const navLink = document.querySelector(`nav a[href*='${sectionId}']`);
+
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
