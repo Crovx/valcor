@@ -5,8 +5,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Valcor Studio | Diseño Web de Alto Impacto & Crecimiento Digital</title>
     <meta name="description" content="Estudio de diseño web premium y desarrollo enfocado en resultados. Creamos soluciones digitales que transforman tu presencia online en una máquina de ventas."/>
-
-    <meta name="google-site-verification" content="tcsQ8LTxVh8xoFocMLUaxbWIMtvtQEkRZEdwMlXf42w" />
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -469,10 +470,16 @@
                             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
                                 Plataforma web de alta gama para estudio de estética automotriz, con cotizador interactivo en tiempo real y embudo directo a WhatsApp.
                             </p>
-                            <button onclick="openProjectModal('vacar')" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all text-sm group-hover:text-primary-container cursor-pointer">
-                                <span>Ver Caso Completo</span>
-                                <span class="material-symbols-outlined text-base">arrow_forward</span>
-                            </button>
+                            <div class="flex items-center gap-3 pt-2">
+                                <a href="https://vacar-detailing.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-bold btn-primary text-xs tracking-wide shadow-sm">
+                                    <span>Visitar Web</span>
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <button onclick="openProjectModal('vacar')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-semibold btn-secondary text-xs bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
+                                    <span>Ver Detalles</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -494,10 +501,16 @@
                             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
                                 Sitio web santuario minimalista enfocado en la serenidad, catálogo de tratamientos orgánicos y reservas en línea sin fricción.
                             </p>
-                            <button onclick="openProjectModal('annie')" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all text-sm group-hover:text-primary-container cursor-pointer">
-                                <span>Ver Caso Completo</span>
-                                <span class="material-symbols-outlined text-base">arrow_forward</span>
-                            </button>
+                            <div class="flex items-center gap-3 pt-2">
+                                <a href="https://annieenaturalbeauty-ikic.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-bold btn-primary text-xs tracking-wide shadow-sm">
+                                    <span>Visitar Web</span>
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <button onclick="openProjectModal('annie')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-semibold btn-secondary text-xs bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
+                                    <span>Ver Detalles</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -925,8 +938,12 @@
                     <ul id="project-modal-deliverables" class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-4"></ul>
                 </div>
 
-                <div class="pt-2 flex justify-end">
-                    <button onclick="closeProjectModal(); openQuoteModal();" class="px-6 py-2.5 rounded-DEFAULT font-bold btn-primary text-sm">
+                <div class="pt-3 flex flex-col sm:flex-row justify-between items-center gap-3 border-t border-outline-variant/30">
+                    <a id="project-modal-link" href="#" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-DEFAULT font-bold btn-primary text-sm shadow-md">
+                        <span>Visitar Sitio Web en Vivo</span>
+                        <span class="material-symbols-outlined text-base">open_in_new</span>
+                    </a>
+                    <button onclick="closeProjectModal(); openQuoteModal();" class="w-full sm:w-auto px-6 py-2.5 rounded-DEFAULT font-semibold btn-secondary text-sm bg-surface-container-lowest">
                         Cotizar Proyecto Similar
                     </button>
                 </div>
@@ -942,6 +959,7 @@
                 title: "Vacar Detailing",
                 tag: "Automotriz & Detailing de Alta Gama",
                 metric: "+85% Reservas Online",
+                url: "https://vacar-detailing.vercel.app/",
                 img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosgc9AXRSZVm5LZmBurgWsVIe4E9gcvMqbxhALxJ0AH9nSBlZdFv0vu4wqrCwcu9lXVHxMDQb5zeKZ4anjz6WNkidhgpgsni1dTx9iYZAipwSZUyMq-VrYgYDidnBzCdvyE5nHe06sx5DYSCyYyCo4q5uo940bBN149e-dUE-qUoX9z01_XRSfULZwvI-RlWuqShpWHxXZr1qCa3XkDN1PQe1QFxp3vJBkbtEc4i46qRWSJ5SrNtCgr0KtgwQP2vQJbUoZr0hwHsVww",
                 desc: "Desarrollo de plataforma digital de alto impacto visual con modo oscuro sofisticado, configurador de servicios de corrección de pintura, protección cerámica y reserva directa.",
                 deliverables: [
@@ -955,6 +973,7 @@
                 title: "Annie Natural Beauty",
                 tag: "Salud, Spa & Cosmética Natural",
                 metric: "2.5x Interacción y Citas",
+                url: "https://annieenaturalbeauty-ikic.vercel.app/",
                 img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAnQDLVjhviirl2zMzfrt0UjZ17w7GwLOoih6pGjwYJvyYHKYHlfKLZJTW7h3oHW3QwBLstdjrczkaHhwPxcEYlXKAYymiFdn03j3rGy3vvIwzWboXu2fjEdpdAcedVZQqSYz_7I6iFr_Mf2Iv_U5OQHn09S9Yo3VoFd_msCv4CN2HgWZSTO-f1QnQd3vzi_xOfDOIInb4RxL-EbKFFrATLmG_XwdFhBBnlcl4DaKmNpgyxx1KsBmhIJvyRE0_kIftQwOVq5csneBUE_g",
                 desc: "Un sitio web santuario minimalista diseñado para transmitir tranquilidad, pureza y exclusividad. Enfoque editorial que destaca tratamientos faciales y corporales orgánicos.",
                 deliverables: [
@@ -1053,6 +1072,7 @@
             document.getElementById('project-modal-tag').textContent = data.tag;
             document.getElementById('project-modal-metric').textContent = data.metric;
             document.getElementById('project-modal-desc').textContent = data.desc;
+            document.getElementById('project-modal-link').href = data.url;
 
             const deliverablesList = document.getElementById('project-modal-deliverables');
             deliverablesList.innerHTML = '';
