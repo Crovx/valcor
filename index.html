@@ -8,8 +8,9 @@
     
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-    <link rel="alternate icon" href="favicon.svg"/>
-    <link rel="apple-touch-icon" href="favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png"/>
+    <link rel="alternate icon" href="favicon.png"/>
+    <link rel="apple-touch-icon" href="favicon.png"/>
     <meta name="theme-color" content="#0056d2"/>
 
     <!-- Google Search Console Verification -->
@@ -173,9 +174,7 @@
         <div class="max-w-container-max mx-auto px-6 md:px-gutter flex justify-between items-center h-20">
             <!-- Logo -->
             <a class="flex items-center gap-2.5 text-2xl font-bold text-primary tracking-tight transition-transform duration-300 hover:scale-[1.02]" href="#hero">
-                <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-md">
-                    <span class="material-symbols-outlined text-2xl" data-icon="polyline">polyline</span>
-                </div>
+                <img src="logo.png" alt="Valcor Studio Logo" class="w-9 h-9 object-contain"/>
                 <span class="text-on-background font-extrabold tracking-tight">Valcor<span class="text-primary-container">Studio</span></span>
             </a>
 
@@ -457,7 +456,7 @@
                     <p class="text-base md:text-lg text-on-surface-variant">Proyectos donde el diseño estratégico impulsó resultados tangibles y medibles de negocio.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 1: Vertex Detailing -->
                     <div class="group card-hover bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/40 shadow-card flex flex-col justify-between">
                         <div class="aspect-[16/9] overflow-hidden relative bg-surface-container">
@@ -513,6 +512,37 @@
                                     <span class="material-symbols-outlined text-sm">open_in_new</span>
                                 </a>
                                 <button onclick="openProjectModal('annie')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-semibold btn-secondary text-xs bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
+                                    <span>Ver Detalles</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: James Cast -->
+                    <div class="group card-hover bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/40 shadow-card flex flex-col justify-between">
+                        <div class="aspect-[16/9] overflow-hidden relative bg-surface-container">
+                            <img alt="James Cast Event Architecture Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="james-cast.png"/>
+                            <div class="absolute top-4 right-4 bg-primary text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+                                +350 Producciones
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <span class="text-xs text-primary font-bold uppercase tracking-wider">Eventos & Escenografía</span>
+                                    <h3 class="text-2xl font-bold text-on-background mt-1">James Cast</h3>
+                                </div>
+                            </div>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Producción integral y diseño escenográfico de alta gama para Bodas, XV Años de Gala, Bautizos y Graduaciones memorables en Torreón y toda la Comarca Lagunera.
+                            </p>
+                            <div class="flex items-center gap-3 pt-2">
+                                <a href="https://james-cast.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-bold btn-primary text-xs tracking-wide shadow-sm">
+                                    <span>Visitar Web</span>
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <button onclick="openProjectModal('jamescast')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-DEFAULT font-semibold btn-secondary text-xs bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
                                     <span>Ver Detalles</span>
                                     <span class="material-symbols-outlined text-sm">visibility</span>
                                 </button>
@@ -820,9 +850,7 @@
                 <!-- Col 1: Brand Info -->
                 <div class="lg:col-span-2 space-y-4">
                     <a class="flex items-center gap-2.5 text-2xl font-bold text-primary tracking-tight" href="#hero">
-                        <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-xl">polyline</span>
-                        </div>
+                        <img src="logo.png" alt="Valcor Studio Logo" class="w-8 h-8 object-contain"/>
                         <span class="text-on-background font-extrabold">Valcor<span class="text-primary-container">Studio</span></span>
                     </a>
                     <p class="text-sm text-on-surface-variant leading-relaxed max-w-sm">
@@ -987,6 +1015,20 @@
                     "Catálogo dinámico de tratamientos y beneficios",
                     "Sistema de reserva de citas integrado con recordatorios",
                     "Puntuación 99/100 en Google Core Web Vitals"
+                ]
+            },
+            jamescast: {
+                title: "James Cast",
+                tag: "Eventos de Gala & Escenografía",
+                metric: "+350 Producciones",
+                url: "https://james-cast.vercel.app/",
+                img: "james-cast.png",
+                desc: "Producción integral y diseño escenográfico de alta gama para Bodas, XV Años de Gala, Bautizos y Graduaciones memorables en Torreón y toda la Comarca Lagunera.",
+                deliverables: [
+                    "Diseño UI/UX de estética cinematográfica y alto impacto visual",
+                    "Arquitectura de información para bodas y galas de alta sociedad",
+                    "Embudo directo de cotización a WhatsApp Concierge VIP",
+                    "Experiencia 100% responsiva y optimizada para conversión móvil"
                 ]
             }
         };
